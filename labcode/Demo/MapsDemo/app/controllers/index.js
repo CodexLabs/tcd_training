@@ -5,12 +5,7 @@ var anno1 = Alloy.Globals.Map.createAnnotation({
     longitude:-122.050212
 });
 $.map.addAnnotation(anno1);
-var anno2 = Alloy.Globals.Map.createAnnotation({
-    title:"Sydney", 
-    latitude: -33.87365, 
-    longitude: 151.20689
-});
-$.map1.addAnnotation(anno2);
+ 
 
 // add the iOS7-specific camera view 
 if(OS_IOS && parseInt(Ti.Platform.version, 10)>=7) {

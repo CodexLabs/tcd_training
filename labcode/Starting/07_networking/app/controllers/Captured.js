@@ -1,0 +1,1 @@
+var fugitiveCollection = Alloy.Collections.Fugitives;

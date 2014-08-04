@@ -19,8 +19,15 @@
 			var newData = [['iOS',e.a],['Android',e.b],['Other',e.c]]; 
 			plot1.series[0].data = newData; 
 			plot1.resetAxesScale(); 
-			plot1.replot();     		
+			plot1.replot();     	
+		
+		Ti.App.fireEvent('doneyet', {
+    	   		"didigetit":"yes"
+    	   	}     		);
+    	   		
     	});
+    	
+    	   
     </script>
 </head>
 <body>

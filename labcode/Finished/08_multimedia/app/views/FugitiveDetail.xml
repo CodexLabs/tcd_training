@@ -2,7 +2,7 @@
     <Model src="Fugitive" instance="true" id="fugitiveDetail" /> 
 	<Window id="detailWindow" model="$.fugitiveDetail" title="{$.fugitiveDetail.name}" dataTransform="dataTransformation">
 		<Label id="captured_lbl" text="{$.fugitiveDetail.captured}" ></Label>
-		<ImageView id="image"></ImageView>
+		<ImageView id="mugshot"></ImageView>
 		<Button id="photo_button"  ></Button>
 		<Button id="capture_button"  ></Button>
 		<Button id="delete_button"  ></Button>

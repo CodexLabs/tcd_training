@@ -2,6 +2,8 @@
   <Window class='container' id="win">
   	<View id="mapview" ns="Alloy.Globals.Map" id="map"></View>
     <View id="dividerLine"/>
-  	<View id="mapview" ns="Alloy.Globals.Map" id="map1"></View>
+  	<View id="mapview" ns="Alloy.Globals.Map" id="map1">
+  		<Annotation id="annotation"  ns="Alloy.Globals.Map.createAnnotation" title="Sydney" latitude= "-33.87365"  longitude= "151.20689" />
+  	</View>
   </Window>
 </Alloy>

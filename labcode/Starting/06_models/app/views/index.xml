@@ -1,5 +1,5 @@
 <Alloy>
-	<TabGroup>
+	<TabGroup id='tabGroup'>
 		<Require src="Fugitives"/>
 		<Require src="Captured"/>
 	</TabGroup>

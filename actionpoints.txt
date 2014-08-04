@@ -1,0 +1,8 @@
+The following issues are still outstanding:
+
+Slide 267 is invalid. That twitter API is invalid
+
+No uploading or D/L Slide
+No progress bar slide
+
+We need a scripted LiveView demo

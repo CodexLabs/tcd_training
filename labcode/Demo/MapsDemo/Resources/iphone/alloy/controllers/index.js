@@ -1,9 +1,20 @@
+function __processArg(obj, key) {
+    var arg = null;
+    if (obj) {
+        arg = obj[key] || null;
+        delete obj[key];
+    }
+    return arg;
+}
+
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
-    arguments[0] ? arguments[0]["__parentSymbol"] : null;
-    arguments[0] ? arguments[0]["$model"] : null;
-    arguments[0] ? arguments[0]["__itemTemplate"] : null;
+    if (arguments[0]) {
+        __processArg(arguments[0], "__parentSymbol");
+        __processArg(arguments[0], "$model");
+        __processArg(arguments[0], "__itemTemplate");
+    }
     var $ = this;
     var exports = {};
     $.__views.win = Ti.UI.createWindow({
@@ -22,8 +33,7 @@ function Controller() {
             longitude: -122.05,
             longitudeDelta: .2
         },
-        id: "map",
-        ns: "Alloy.Globals.Map"
+        id: "map"
     });
     $.__views.win.add($.__views.map);
     $.__views.dividerLine = Ti.UI.createView({
@@ -46,10 +56,16 @@ function Controller() {
             latitudeDelta: .1,
             longitudeDelta: .1
         },
-        id: "map1",
-        ns: "Alloy.Globals.Map"
+        id: "map1"
     });
     $.__views.win.add($.__views.map1);
+    $.__views.annotation = require("ti.map").createAnnotation({
+        id: "annotation",
+        title: "Sydney",
+        latitude: "-33.87365",
+        longitude: "151.20689"
+    });
+    $.__views.map1.add($.__views.annotation);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var anno1 = Alloy.Globals.Map.createAnnotation({
@@ -58,12 +74,6 @@ function Controller() {
         longitude: -122.050212
     });
     $.map.addAnnotation(anno1);
-    var anno2 = Alloy.Globals.Map.createAnnotation({
-        title: "Sydney",
-        latitude: -33.87365,
-        longitude: 151.20689
-    });
-    $.map1.addAnnotation(anno2);
     if (true && parseInt(Ti.Platform.version, 10) >= 7) {
         var cam = Alloy.Globals.Map.createCamera({
             altitude: 300,
