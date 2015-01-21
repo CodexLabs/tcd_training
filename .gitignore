@@ -1,7 +1,8 @@
 # Build folder and log file
 build/
 build.log
-
+.DS_Store
+.project
 /labcode/Finished/06_models/Resources/alloy.js
 /labcode/Finished/06_models/Resources/alloy/
 /labcode/Finished/06_models/Resources/android/
